@@ -1,0 +1,71 @@
+'{"id":{"0":1,"1":2,"2":3,"3":4,"4":5,"5":6,"6":7,"7":8,"8":9,"9":10,"10":11,"11":12,"12":13,"13":14,"14":15,"15":16,"16":17,"17":18,"18":19,"19":20,"20":21,"21":22,"22":23,"23":24,"24":25,"25":26,"26":27,"27":28,"28":29,"29":30,"30":31,"31":32,"32":33,"33":34,"34":35,"35":36,"36":37},"card_type":{"0":"door","1":"door","2":"door","3":"door","4":"door","5":"door","6":"door","7":"door","8":"door","9":"door","10":"door","11":"door","12":"door","13":"door","14":"door","15":"door","16":"door","17":"door","18":"door","19":"door","20":"door","21":"door","22":"door","23":"door","24":"door","25":"door","26":"door","27":"door","28":"door","29":"door","30":"door","31":"door","32":"door","33":"door","34":"door","35":"door","36":"door"},"name":{"0":"Lawyers","1":"Shrieking
+  Geek","2":"Hippogriff","3":"Net Troll","4":"Platycore","5":"Gelatinous Octahedron","6":"Pukachu","7":"Flying
+  Frogs","8":"Leperchaun","9":"Mr Bones","10":"Potted Plant","11":"Undead Horse","12":"Large
+  Angry Chicken","13":"Tongue Demon","14":"Maul Rat","15":"Unspeakably Awful Indescribable
+  Horror","16":"Stoned Golem","17":"Ghoulfiends","18":"Wannabe Vampire","19":"Drooling
+  Slime","20":"Floating Nose","21":"Gazebo","22":"Face Sucker","23":"Snails on Speed","24":"Crabs","25":"Plutonium
+  Dragon","26":"Squidzilla","27":"Bigfoot","28":"Pit Bull ","29":"Wight Brothers","30":"BullRog","31":"Lame
+  Goblin","32":"Harpies ","33":"King Tut","34":"3,872 Orcs","35":"Insurance Salesman","36":"Amazon"},"level":{"0":6,"1":6,"2":16,"3":10,"4":6,"5":2,"6":6,"7":2,"8":4,"9":2,"10":1,"11":4,"12":2,"13":12,"14":1,"15":14,"16":14,"17":8,"18":12,"19":1,"20":10,"21":8,"22":8,"23":4,"24":1,"25":20,"26":18,"27":12,"28":2,"29":16,"30":18,"31":1,"32":4,"33":16,"34":10,"35":14,"36":8},"undead":{"0":0,"1":0,"2":0,"3":0,"4":0,"5":0,"6":0,"7":0,"8":0,"9":1,"10":0,"11":1,"12":0,"13":0,"14":0,"15":0,"16":0,"17":0,"18":0,"19":0,"20":0,"21":0,"22":0,"23":0,"24":0,"25":0,"26":0,"27":0,"28":0,"29":1,"30":0,"31":0,"32":0,"33":1,"34":0,"35":0,"36":0},"treasure_reward":{"0":2,"1":2,"2":4,"3":3,"4":2,"5":1,"6":2,"7":1,"8":2,"9":1,"10":1,"11":2,"12":1,"13":3,"14":1,"15":4,"16":4,"17":2,"18":3,"19":1,"20":3,"21":2,"22":2,"23":2,"24":1,"25":5,"26":4,"27":3,"28":1,"29":4,"30":5,"31":1,"32":2,"33":4,"34":3,"35":4,"36":2},"level_reward":{"0":1,"1":1,"2":2,"3":1,"4":1,"5":1,"6":1,"7":1,"8":1,"9":1,"10":1,"11":1,"12":1,"13":1,"14":1,"15":1,"16":1,"17":1,"18":1,"19":1,"20":1,"21":1,"22":1,"23":1,"24":1,"25":2,"26":2,"27":1,"28":1,"29":1,"30":2,"31":1,"32":1,"33":2,"34":1,"35":1,"36":1},"ability":{"0":"Will
+  not attack a Thief (professional courtesy). A Thief encountering a lawyer may instead
+  discard two Treasures and draw two new ones face down.","1":"Effect: +6 against
+  Warriors.","2":"Will not pursue anyone of Level 3 or below.","3":"He has no special
+  powers, and he''s really mad about it.","4":"Risists magic. +6 against Wizards.","5":"Effect:
+  +1 to Run Away.","6":"Gain an extra Level if you defeat it without using help or
+  bonuses.","7":"Effect: -1 to Run Away.","8":"Effect: +5 against Elves. He''s gross!","9":"If
+  you must flee, you lose a level even if you escape.","10":"Elves draw an extra Treasure
+  after defeating it.","11":"Effect: +5 against Dwarves.","12":"Fried  chicken is
+  delicious. Gain an extra level if you defeat it with fire or flame.","13":"A creature
+  from Hell. +4 against Clerics. You must discard one item (your choice) before combat.","14":"A
+  creature from Hell. +3 against Clerics.","15":"Bonus: +4 against Warriors.","16":"You
+  may choose whether to fight the Stoned Golem or just wave, walk past and let him
+  keep his Treasure. (Exception: Halflings look tasty and must fight).","17":"No items
+  help against them - fight them with your level only.","18":"Instead of fighting,
+  a Cleric can chase the Wannabe Vampire away just by going \"booga booga\", and take
+  all his treasure. There is no level increase for this.","19":"Yucky slime! +4 against
+  Elves.","20":"If you dont want to fight the Floating Nose, you can bribe it with
+  an item worth at least 200 gold pieces, and it will let you go.","21":"No one can
+  help you. You must face the Gazebo alone.","22":"Its gross! +6 against Elves.","23":"Bonus:
+  -2 to Run Away.","24":"Cannot be outrun!","25":"Will not pursue anyone of Level
+  5 or below.","26":"Elves are at -4. Will not pursue anyone of Level 4 or below except
+  Elves.","27":"Effect: +3 against Dwarves and Halflings.","28":"If you can''t defeat
+  it, you may distract it (automatic escape) by dropping any wand, pole, or staff.
+  (Fetch, Fido!)","29":"Will not pursue anyone of Level 3 or below. Higher-Level characters
+  lose 2 levels, even if they escape.","30":"Will not pursue anyone of Level 4 or
+  below.","31":"Effect: +1 to Run Away.","32":"They resist magic. +5 againast Wizards.","33":"Will
+  not pursue anyone of Level 3 or below. Higher-Level characters lose 2 levels, even
+  if they escape.","34":"Effect: +6 against Dwarves, due to ancient grudges.","35":"Your
+  Level does not count. Fight him only with your bonuses!","36":"Will not attack females;
+  just gives them 1 Treasure instead."},"bad_stuff":{"0":"He hits you with an injunction.
+  Let each other player draw one card from your hand, starting with the player to
+  your left. Discard any remainder.","1":"You become a normal boring Human. Discard
+  any Race or Class cards in play.","2":"You are stomped and chomped. You drop things
+  as you flee. Starting with the player on your right, each player may take one Treasure
+  card from in front of you or (without looking) from your hand.","3":"Screws up the
+  game balance by forcing you to let the player(s) of the highest Level take any one
+  item (each) from you.","4":"Either discard your whole hand or lose 2 Levels.","5":"Drop
+  all your Big items.","6":"Projectile vomiting attack! Discard your whole hand.","7":"They
+  bite! Lose 2 Levels.","8":"He takes two items from you - one chosen by the player
+  on either side of you.","9":"His bony touch costs you 2 Levels.","10":"None. Escape
+  is automatic","11":"Kicks, bites, an smells awful. Lose 2 Levels.","12":"Very painful
+  pecking. Lose a Level.","13":"A really disgusting kiss costs you 2 Levels (3 for
+  Elves).","14":"She wacks you. Lose a Level.","15":"Unspeakably awful death for anyone
+  but a Wizard. A Wizard merely loses his powers - discard the Wizard card.","16":"He
+  has the munchies. He eats you. Youre dead.","17":"Your Level becomes equal to the
+  lowest Level of any character in play.","18":"Blocks the door and tells you about
+  his character. Lose 3 Levels.","19":"Discard the Footgear you are wearing. Lose
+  a Level if you have no Footgear.","20":"It can sniff you anywhere. If you lose,
+  you cannot flee; nothing will help you. Lose 3 Levels.","21":"Lose 3 Levels.","22":"When
+  it sucks your face off, your Headgear goes with it. Discard the Headgear you are
+  wearing, and lose a Level.","23":"They steal your Treasure. Roll a die and lose
+  that many items or cards in your hand - your choice.","24":"Discard Armor and all
+  items worn below the waist.","25":"You are roasted and eaten. You are dead.","26":"You
+  are grabbed, slimed, crushed, and gobbled. You are dead, dead, dead. Any questions?","27":"Stomps
+  you flat and eats your hat. Lose the Headgear you were wearing.","28":"Fang marks
+  in your butt. Lose 2 Levels.","29":"You are reduced to Level 1.","30":"You are flayed
+  to death.","31":"He whacks you with his crutch. Lose a Level.","32":"Their music
+  is really really bad. Lose 2 Levels.","33":"Lose all your items and all cards in
+  your hand.","34":"Roll a die. On a 2 or less, they stomp you to death. Otherwise,
+  lose as many levels as the die shows.","35":"You buy insurance. Lose 1000 Gold Pieces''
+  worth of items. If you dont have that much, lose all you have.","36":"You have had
+  your butt kicked by a woman. Your macho munchkin pride is lost. Lose your Class(es).
+  If you already had no Class, lose 3 Levels."},"str_bonus_class":{"0":null,"1":"warrior:6","2":null,"3":null,"4":"wizard:6","5":null,"6":null,"7":null,"8":null,"9":null,"10":null,"11":null,"12":null,"13":"cleric:4","14":"cleric:3","15":"warrior:4","16":null,"17":null,"18":null,"19":null,"20":null,"21":null,"22":null,"23":null,"24":null,"25":null,"26":null,"27":null,"28":null,"29":null,"30":null,"31":null,"32":null,"33":null,"34":null,"35":null,"36":null},"str_bonus_race":{"0":null,"1":null,"2":null,"3":null,"4":null,"5":null,"6":null,"7":null,"8":"elf:5","9":null,"10":null,"11":"dwarf:5","12":null,"13":null,"14":null,"15":null,"16":null,"17":null,"18":null,"19":"elf:4","20":null,"21":null,"22":"elf:6","23":null,"24":null,"25":null,"26":"elf:-4","27":"dwarf:3;halfling:3","28":null,"29":null,"30":null,"31":null,"32":"wizard:5","33":null,"34":"dwarf:6","35":null,"36":null},"will_not_attack":{"0":null,"1":null,"2":3.0,"3":null,"4":null,"5":null,"6":null,"7":null,"8":null,"9":null,"10":null,"11":null,"12":null,"13":null,"14":null,"15":null,"16":null,"17":null,"18":null,"19":null,"20":null,"21":null,"22":null,"23":null,"24":null,"25":5.0,"26":null,"27":null,"28":null,"29":3.0,"30":4.0,"31":null,"32":null,"33":3.0,"34":null,"35":null,"36":null},"will_not_attack_class":{"0":null,"1":null,"2":null,"3":null,"4":null,"5":null,"6":null,"7":null,"8":null,"9":null,"10":null,"11":null,"12":null,"13":null,"14":null,"15":null,"16":null,"17":null,"18":null,"19":null,"20":null,"21":null,"22":null,"23":null,"24":null,"25":null,"26":null,"27":null,"28":null,"29":null,"30":null,"31":null,"32":null,"33":null,"34":null,"35":null,"36":null},"will_not_attack_race":{"0":null,"1":null,"2":null,"3":null,"4":null,"5":null,"6":null,"7":null,"8":null,"9":null,"10":null,"11":null,"12":null,"13":null,"14":null,"15":null,"16":null,"17":null,"18":null,"19":null,"20":null,"21":null,"22":null,"23":null,"24":null,"25":null,"26":null,"27":null,"28":null,"29":null,"30":null,"31":null,"32":null,"33":null,"34":null,"35":null,"36":null},"run_away":{"0":null,"1":null,"2":null,"3":null,"4":null,"5":1.0,"6":null,"7":-1.0,"8":null,"9":null,"10":null,"11":null,"12":null,"13":null,"14":null,"15":null,"16":null,"17":null,"18":null,"19":null,"20":null,"21":null,"22":null,"23":-2.0,"24":null,"25":null,"26":null,"27":null,"28":null,"29":null,"30":null,"31":1.0,"32":null,"33":null,"34":null,"35":null,"36":null}}'
