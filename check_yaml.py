@@ -6,11 +6,11 @@ with open('cards.yaml', 'r') as f:
     # pprint.pprint(yaml.load(f))
 
     x = yaml.load(f)
-    monster = x['card']['door']['monster']
+    monster = x['door']['monster']
     for i in monster:
         print(i['name'])
 
-    pprint.pprint(x['card']['treasure']['equipment'])
+pprint.pprint(x['treasure']['equipment'])
 
 
 # # import pandas as pd
