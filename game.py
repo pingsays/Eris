@@ -28,6 +28,11 @@ class Game():
         random.shuffle(self.door)
         random.shuffle(self.treasure)
 
+    def roll_dice(self):
+        dice_roll = random.randint(1, 6)
+        print(f'Dice Roll: {dice_roll}')
+        return dice_roll
+
 
 class Player():
     def __init__(self):
@@ -39,3 +44,5 @@ x = Game()
 pprint(x.door)
 print()
 pprint(x.treasure)
+
+x.roll_dice()
