@@ -1,0 +1,283 @@
+--- # Eris
+door:
+
+    -
+        card_type: "monster"
+        name: "Lawyers"
+        level: 6
+        reward:
+            treasure_reward: 2
+            # level_reward: 1
+        description:
+            - "Will not attack a Thief (professional courtesy). A Thief encountering a Lawyer may instead discard two Treasures and draw two new ones face down."
+            - "He hits you with an injunction. Let each other player draw one card from your hand, starting with the player to your left. Discard any remainder."
+    -
+        card_type: "monster"
+        name: "Shrieking Geek"
+        level: 6
+        reward:
+            treasure_reward: 2
+            # level_reward: 1
+        description:
+            - "Effect: +6 against Warriors."
+            - "You become a normal boring Human. Discard any Race or Class card(s) in play."
+        str_bonus:
+            - class: "Warrior"
+            - bonus: 6
+    -
+        card_type: "monster"
+        name: "Hippogriff"
+        level: 16
+        reward:
+            treasure_reward: 4
+            level_reward: 2
+        description:
+            - "Will not pursue anyone Level 3 or below."
+            - "You are stomped and chomped. You drop things as you flee. Starting with the player on your right, each player may take one Treasure card from in front of you or (without looking) from your hand."
+        will_not_attack_level: 3
+    -
+        card_type: "monster"
+        name: "Net Troll"
+        level: 10
+        reward:
+            treasure_reward: 3
+            # level_reward: 1
+        description:
+            - "He has no special powers, and he's really mad about it."
+            - "Screws up the game balance by forcing you to let the player(s) of the highest Level take any one item (each) from you."
+    -
+        card_type: "monster"
+        name: "Platycore"
+        level: 6
+        reward:
+            treasure_reward: 2
+            # level_reward: 1
+        description:
+            - "Resists magic. +6 against Wizards."
+            - "Either discard your whole hand or lose 2 Levels."
+    -
+        card_type: "curse"
+        name: "Curse"
+        description:
+            - "Lose the headgear you are wearing."
+        effect:
+            -
+                attribute: "headgear"
+                equip_status: "equipped"
+                action: "discard"
+    -
+        card_type: "curse"
+        name: "Curse"
+        description:
+            - "Lose the footgear you are wearing."
+        effect:
+            -
+                attribute: "footgear"
+                equip_status: "equipped"
+                action: "discard"
+    -
+        card_type: "curse"
+        name: "Curse"
+        description:
+            - "Lose the armor you are wearing."
+        effect:
+            -
+                attribute: "armor"
+                equip_status: "equipped"
+                action: "discard"
+    -
+        card_type: "curse"
+        name: "Curse"
+        description:
+            - "Lose a Level"
+        effect:
+            -
+                attribute: "level"
+                action: -1
+        quantity: 2
+    -
+        card_type: "curse"
+        name: "Curse"
+        description:
+            - "Lose a Small item."
+        effect:
+            -
+                attribute: "small"
+                equip_status: "carried"
+                action: "discard"
+        quantity: 2
+    -
+        card_type: "curse"
+        name: "Curse"
+        description:
+            - "Lose a Big item."
+        effect:
+            -
+                attribute: "big"
+                equip_status: "carried"
+                action: "discard"
+    -
+        card_type: "spell"
+        name: "Ancient"
+        description:
+            - "+10 to Monster strength. Play during combat. If the monster is defeated, draw 2 extra Treasures."
+    -
+        card_type: "spell"
+        name: "Humongous"
+        description:
+            - "+10 to Monster strength. Play during combat. If the monster is defeated, draw 2 extra Treasures."
+    -
+        card_type: "spell"
+        name: "Enraged"
+        description:
+            - "+5 to Monster strength. Play during combat. If the monster is defeated, draw 1 extra Treasure."
+    -
+        card_type: "spell"
+        name: "Intelligent"
+        description:
+            - "+5 to Monster strength. Play during combat. If the monster is defeated, draw 1 extra Treasure."
+    -
+        card_type: "spell"
+        name: "Baby"
+        description:
+            - "-5 to Monster strength. Play during combat. If the monster is defeated, draw 1 fewer Treasure (minimum of 1)."
+    -
+        card_type: "spell"
+        name: "Divine Intervention"
+        description:
+            - "You must play this card as soon as you get it. All Clerics immediately go up a level. This can be the winning level. If this card makes you win, you are entitled to mock the other players mercilessly."
+    -
+        card_type: "class"
+        name: "Thief"
+        description:
+            - "Backstabbing: You may discard a card to backstab another player (-2 in combat). You may do this only once per victim per combat, but if two players are fighting a monster together, you may backstab each of them."
+            - "Theft: You may discard a card to try to steal a small item carried by another player. Roll a die; 4 or more succeeds. Otherwise, you get whacked and lose a level."
+        quantity: 3
+    -
+        card_type: "class"
+        name: "Wizard"
+        description:
+            - "Fight Spell: You may discard up to 3 cards after rolling the die to Run Away; each give you a +1 bonus to flee."
+            - "Charm Spell: You may discard your whole hand (minimum 3 cards) to charm a single Monster instead of fighting it. Discard the Monster and take its Treasure, but don't gain levels. If there are other monsters in the combat, fight them normally."
+        quantity: 3
+    -
+        card_type: "class"
+        name: "Warrior"
+        description:
+            - "You may discard up to 3 cards in combat; each one gives you a +1 bonus."
+            - "You win ties in combat."
+        quantity: 3
+    -
+        card_type: "class"
+        name: "Cleric"
+        description:
+            - "Resurrection: When it is time for you to draw cards face-up, you may instead take some or all from the top of the appropriate discard pile. You must then discard one card from your hand for each so drawn."
+            - "Turning: You may discard up to 3 cards in combat against an Undead monster. Each discard gives you a +3 bonus."
+        quantity: 3
+    -
+        card_type: "class"
+        name: "Super Munchkin"
+        description:
+            - "You may have two Class cards, and have all the advantages and disadvantages of each. Or you may have one Class card and have all of its advantages and none of its disadvantages (for example, monsters that hate Clerics will have no bonus against a Super Cleric)."
+            - "Lose this card if you lose all your Class cards."
+        quantity: 2
+    -
+        card_type: "race"
+        name: "Dwarf"
+        description:
+            - "You can carry any number of Big items."
+            - "You can have 6 cards in your hand."
+        quantity: 3
+    -
+        card_type: "race"
+        name: "Elf"
+        description:
+            - "+1 to Run Away"
+            - "You go up a level for every monster you help someone else kill."
+        quantity: 3
+    -
+        card_type: "race"
+        name: "Halfling"
+        description:
+            - "You may sell one item each turn for double price (other items are at normal price)."
+            - "If you fail your initial Run Away roll, you may discard a card and try once more."
+        quantity: 3
+    -
+        card_type: "race"
+        name: "Half-Breed"
+        description:
+            - "You may have two Race cards, and have all the advantages and disadvantages of each. Or you may have one Race card and have all of its advantages and none of its disadvantages (for example, monsters that hate Elves will have no bonus against a Half-Elf). Lose this card if you lose your Race card(s)."
+        quantity: 2
+treasure:
+    -
+        card_type: "equipment"
+        name: "Singing & Dancing Sword"
+        str_bonus: 2
+        gold_value: 400
+        used_by:
+            thief: false
+    -
+        card_type: "equipment"
+        name: "Bow with Ribbons"
+        gear_slot: ["hand", 2]
+        str_bonus: 4
+        gold_value: 800
+        used_by:
+            elf: true
+    -
+        card_type: "equipment"
+        name: "Cheese Grater of Peace"
+        gear_slot: ["hand", 1]
+        str_bonus: 3
+        gold_value: 400
+        used_by:
+            cleric: true
+    -
+        card_type: "equipment"
+        name: "Leather Armor"
+        gear_slot: ["armor", 1]
+        str_bonus: 1
+        gold_value: 200
+        used_by:
+            female: true  # need to double check
+    -
+        card_type: "level_spell"
+        name: "Go Up A Level"
+        level_gain: 1
+        quantity: 6
+    -
+        card_type: "level_spell"
+        name: "Kill the Hireling"
+        description:
+            - "You can use this card only if a Hireling is in play (no matter who owns him). Discard the Hireling."
+        level_gain: 1
+    -
+        card_type: "misc_treasure"
+        name: "Transferral Potion"
+        description:
+            - "Play during any combat. Any other player (your choice) fights the monster(s), may ask for help normally, and gets the Treasure and levels if he wins. The original player then resumes his turn, and may Loot The Room whether the combat was won or lost. Usable once only."
+        gold_value: 300
+    -
+        card_type: "misc_treasure"
+        name: "Flask of Glue"
+        description:
+            - "Play when someone successfully escapes a combat for any reason. They must re-roll their escape (even if it was automatic the first time). Usable once only."
+        gold_value: 100
+    -
+        card_type: "misc_treasure"
+        name: "Potion of Halitosis"
+        description:
+            - "Play during any combat. +2 to either side, or instantly kills the Floating Nose. Usable once only."
+        gold_value: 100
+    -
+        card_type: "misc_treasure"
+        name: "Flaming Poison Potion"
+        description:
+            - "Play during any combat. + 3 to either side. Usable once only."
+        gold_value: 100
+    -
+        card_type: "misc_treasure"
+        name: "Pretty Balloons"
+        description:
+            - "Play during any combat, for distraction. +5 to either side. Usable once only."
+...
