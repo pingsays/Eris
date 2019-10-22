@@ -58,16 +58,38 @@ class Player():
                 print(key, value)
 
 
-x = Game()
-ping = Player()
+munchkin = Game()
+player_names = ['ping', 'james']
+players = {}
+
+for player_name in player_names:
+    players[player_name] = Player()
+
+# print(munchkin.door.pop(0))
+for i in range(4):
+    # print(munchkin.door[i])
+    for player in players.values():
+        player.draw_card('game_setup', munchkin.door)
 
 for i in range(4):
-    ping.draw_card('game_setup', x.door)
+    # print(munchkin.treasure[i])
+    for player in players.values():
+        player.draw_card('game_setup', munchkin.treasure)
 
-for i in range(4):
-    ping.draw_card('game_setup', x.treasure)
-
-for card in ping.hand:
+print("Ping's hand")
+for card in players['ping'].hand:
     for i in card:
         print(i)
     print()
+
+print("Jame's hand")
+for card in players['james'].hand:
+    for i in card:
+        print(i)
+    print()
+
+# print("Abdul's hand")
+# for card in players['abdul'].hand:
+#     for i in card:
+#         print(i)
+#     print()
