@@ -303,4 +303,9 @@ treasure:
         spell: "Pretty Balloons"
         description:
             - "Play during any combat, for distraction. +5 to either side. Usable once only."
+    -
+        card_type: 'treasure'
+        spell: "Hoard!"
+        description:
+            - "Draw three more Treasure cards immediately. They are face-down if you drew this card face-down; otherwise, they are face-up."
 ...

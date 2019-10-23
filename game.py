@@ -59,7 +59,7 @@ class Player():
 
 
 munchkin = Game()
-player_names = ['ping', 'james']
+player_names = ['ping', 'james', 'abdul']
 players = {}
 
 for player_name in player_names:
@@ -76,17 +76,20 @@ for i in range(4):
     for player in players.values():
         player.draw_card('game_setup', munchkin.treasure)
 
-print("Ping's hand")
-for card in players['ping'].hand:
-    for i in card:
-        print(i)
-    print()
 
-print("Jame's hand")
-for card in players['james'].hand:
-    for i in card:
-        print(i)
-    print()
+for player in player_names:
+    header_row = f"-- {player}'s hand --"
+    header_len = len(header_row)
+
+    print("-" * header_len)
+    print(header_row)
+    print("-" * header_len)
+
+    for card in players[player].hand:
+        for i in card:
+            print(i)
+        print()
+
 
 # print("Abdul's hand")
 # for card in players['abdul'].hand:
