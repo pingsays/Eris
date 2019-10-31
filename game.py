@@ -129,25 +129,25 @@ for i in range(4):
 #=====================#
 # testing player hand #
 #=====================#
-# for player in player_names:
-#     header_row = f"-- {player}'s hand --"
-#     header_len = len(header_row)
+for player in player_names:
+    header_row = f"-- {player}'s hand --"
+    header_len = len(header_row)
 
-#     print("-" * header_len)
-#     print(header_row)
-#     print("-" * header_len)
+    print("-" * header_len)
+    print(header_row)
+    print("-" * header_len)
 
-#     for card in players[player].hand:
-#         for key, value in card.items():
-#             if 'metadata' in key:
-#                 continue
-#             elif 'description' in key:
-#                 print('description: ', end='')
-#                 for i in value:
-#                     print(i)
-#             else:
-#                 print(f"{key}: {value}")
-#         print()
+    for card in players[player].hand:
+        for key, value in card.items():
+            if 'metadata' in key:
+                continue
+            elif 'description' in key:
+                print('description: ', end='')
+                for i in value:
+                    print(i)
+            else:
+                print(f"{key}: {value}")
+        print()
 
 #===========================================#
 # testing discard card and reshuffling deck #
@@ -181,21 +181,21 @@ for i in range(4):
 #=========================#
 # testing use card method #
 #=========================#
-print(players['ping'].hand)
-print()
-print(players['james'].playing_field)
-print()
-players['ping'].use_card(0, players['james'])
-print()
-print(players['ping'].hand)
-print()
-print(players['james'].playing_field)
-print()
-print(mk.door_discard)
-print()
-print(players['ping'].hand)
-print()
-players['ping'].use_card(0, mk.door_discard)
-print(mk.door_discard)
-print()
-print(players['ping'].hand)
+# print(players['ping'].hand)
+# print()
+# print(players['james'].playing_field)
+# print()
+# players['ping'].use_card(0, players['james'])
+# print()
+# print(players['ping'].hand)
+# print()
+# print(players['james'].playing_field)
+# print()
+# print(mk.door_discard)
+# print()
+# print(players['ping'].hand)
+# print()
+# players['ping'].use_card(0, mk.door_discard)
+# print(mk.door_discard)
+# print()
+# print(players['ping'].hand)

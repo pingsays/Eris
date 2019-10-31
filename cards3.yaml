@@ -1,311 +1,813 @@
 --- # Eris
 door:
 
-    -
-        card_type: 'door'
-        monster: "Lawyers"
-        level: 6
-        reward:
-            treasure_reward: 2
-            # level_reward: 1
-        description:
-            - "Will not attack a Thief (professional courtesy). A Thief encountering a Lawyer may instead discard two Treasures and draw two new ones face down."
-            - "He hits you with an injunction. Let each other player draw one card from your hand, starting with the player to your left. Discard any remainder."
-    -
-        card_type: 'door'
-        monster: "Shrieking Geek"
-        level: 6
-        reward:
-            treasure_reward: 2
-            # level_reward: 1
-        description:
-            - "Effect: +6 against Warriors."
-            - "You become a normal boring Human. Discard any Race or Class card(s) in play."
-        metadata:
-            - str_bonus: ["Warrior", 6]
-    -
-        card_type: 'door'
-        monster: "Hippogriff"
-        level: 16
-        reward:
-            treasure_reward: 4
-            level_reward: 2
-        description:
-            - "Will not pursue anyone Level 3 or below."
-            - "You are stomped and chomped. You drop things as you flee. Starting with the player on your right, each player may take one Treasure card from in front of you or (without looking) from your hand."
-        metadata:
-            - will_not_attack_level: 3
-    -
-        card_type: 'door'
-        monster: "Net Troll"
-        level: 10
-        reward:
-            treasure_reward: 3
-            # level_reward: 1
-        description:
-            - "He has no special powers, and he's really mad about it."
-            - "Screws up the game balance by forcing you to let the player(s) of the highest Level take any one item (each) from you."
-    -
-        card_type: 'door'
-        monster: "Platycore"
-        level: 6
-        reward:
-            treasure_reward: 2
-            # level_reward: 1
-        description:
-            - "Resists magic. +6 against Wizards."
-            - "Either discard your whole hand or lose 2 Levels."
-    -
-        card_type: 'door'
-        curse: "Curse"
-        description:
-            - "Lose the headgear you are wearing."
-        metadata:
-            - effect:
-                -
-                    attribute: "headgear"
-                    equip_status: "equipped"
-                    action: "discard"
-    -
-        card_type: 'door'
-        curse: "Curse"
-        description:
-            - "Lose the footgear you are wearing."
-        metadata:
-            - effect:
-                -
-                    attribute: "footgear"
-                    equip_status: "equipped"
-                    action: "discard"
-    -
-        card_type: 'door'
-        curse: "Curse"
-        description:
-            - "Lose the armor you are wearing."
-        metadata:
-            - effect:
-                -
-                    attribute: "armor"
-                    equip_status: "equipped"
-                    action: "discard"
-    -
-        card_type: 'door'
-        curse: "Curse"
-        description:
-            - "Lose a Level"
-        metadata:
-            - effect:
-                -
-                    attribute: "level"
-                    action: -1
-            - quantity: 2
-    -
-        card_type: 'door'
-        curse: "Curse"
-        description:
-            - "Lose a Small item."
-        metadata:
-            - effect:
-                -
-                    attribute: "small"
-                    equip_status: "carried"
-                    action: "discard"
-            - quantity: 2
-    -
-        card_type: 'door'
-        curse: "Curse"
-        description:
-            - "Lose a Big item."
-        metadata:
-            - effect:
-                -
-                    attribute: "big"
-                    equip_status: "carried"
-                    action: "discard"
-    -
-        card_type: 'door'
-        spell: "Ancient"
-        description:
-            - "+10 to Monster strength. Play during combat. If the monster is defeated, draw 2 extra Treasures."
-    -
-        card_type: 'door'
-        spell: "Humongous"
-        description:
-            - "+10 to Monster strength. Play during combat. If the monster is defeated, draw 2 extra Treasures."
-    -
-        card_type: 'door'
-        spell: "Enraged"
-        description:
-            - "+5 to Monster strength. Play during combat. If the monster is defeated, draw 1 extra Treasure."
-    -
-        card_type: 'door'
-        spell: "Intelligent"
-        description:
-            - "+5 to Monster strength. Play during combat. If the monster is defeated, draw 1 extra Treasure."
-    -
-        card_type: 'door'
-        spell: "Baby"
-        description:
-            - "-5 to Monster strength. Play during combat. If the monster is defeated, draw 1 fewer Treasure (minimum of 1)."
-    -
-        card_type: 'door'
-        spell: "Divine Intervention"
-        description:
-            - "You must play this card as soon as you get it. All Clerics immediately go up a level. This can be the winning level. If this card makes you win, you are entitled to mock the other players mercilessly."
-    -
-        card_type: 'door'
-        class: "Thief"
-        description:
-            - "Backstabbing: You may discard a card to backstab another player (-2 in combat). You may do this only once per victim per combat, but if two players are fighting a monster together, you may backstab each of them."
-            - "Theft: You may discard a card to try to steal a small item carried by another player. Roll a die; 4 or more succeeds. Otherwise, you get whacked and lose a level."
-        metadata:
-            - quantity: 3
-    -
-        card_type: 'door'
-        class: "Wizard"
-        description:
-            - "Fight Spell: You may discard up to 3 cards after rolling the die to Run Away; each give you a +1 bonus to flee."
-            - "Charm Spell: You may discard your whole hand (minimum 3 cards) to charm a single Monster instead of fighting it. Discard the Monster and take its Treasure, but don't gain levels. If there are other monsters in the combat, fight them normally."
-        metadata:
-            - quantity: 3
-    -
-        card_type: 'door'
-        class: "Warrior"
-        description:
-            - "You may discard up to 3 cards in combat; each one gives you a +1 bonus."
-            - "You win ties in combat."
-        metadata:
-            - quantity: 3
-    -
-        card_type: 'door'
-        class: "Cleric"
-        description:
-            - "Resurrection: When it is time for you to draw cards face-up, you may instead take some or all from the top of the appropriate discard pile. You must then discard one card from your hand for each so drawn."
-            - "Turning: You may discard up to 3 cards in combat against an Undead monster. Each discard gives you a +3 bonus."
-        metadata:
-            - quantity: 3
-    -
-        card_type: 'door'
-        class: "Super Munchkin"
-        description:
-            - "You may have two Class cards, and have all the advantages and disadvantages of each. Or you may have one Class card and have all of its advantages and none of its disadvantages (for example, monsters that hate Clerics will have no bonus against a Super Cleric)."
-            - "Lose this card if you lose all your Class cards."
-        metadata:
-            - quantity: 2
-    -
-        card_type: 'door'
-        race: "Dwarf"
-        description:
-            - "You can carry any number of Big items."
-            - "You can have 6 cards in your hand."
-        metadata:
-            - quantity: 3
-    -
-        card_type: 'door'
-        race: "Elf"
-        description:
-            - "+1 to Run Away"
-            - "You go up a level for every monster you help someone else kill."
-        metadata:
-            - quantity: 3
-    -
-        card_type: 'door'
-        race: "Halfling"
-        description:
-            - "You may sell one item each turn for double price (other items are at normal price)."
-            - "If you fail your initial Run Away roll, you may discard a card and try once more."
-        metadata:
-            - quantity: 3
-    -
-        card_type: 'door'
-        race: "Half-Breed"
-        description:
-            - "You may have two Race cards, and have all the advantages and disadvantages of each. Or you may have one Race card and have all of its advantages and none of its disadvantages (for example, monsters that hate Elves will have no bonus against a Half-Elf). Lose this card if you lose your Race card(s)."
-        metadata:
-            - quantity: 2
+  #=============#
+  #   monster   #
+  #=============#
+  - card_type: 'door'
+    monster: "Lawyers"
+    level: 6
+    reward:
+      treasure_reward: 2
+    description:
+      - "Will not attack a Thief (professional courtesy). A Thief encountering a Lawyer may instead discard two Treasures and draw two new ones face down."
+      - "He hits you with an injunction. Let each other player draw one card from your hand, starting with the player to your left. Discard any remainder."
+  - card_type: 'door'
+    monster: "Shrieking Geek"
+    level: 6
+    reward:
+      treasure_reward: 2
+    description:
+      - "+6 against Warriors."
+      - "You become a normal boring Human. Discard any Race or Class card(s) in play."
+    metadata:
+      - str_bonus: ["Warrior", 6]
+  - card_type: 'door'
+    monster: "Hippogriff"
+    level: 16
+    reward:
+      treasure_reward: 4
+      level_reward: 2
+    description:
+      - "Will not pursue anyone Level 3 or below."
+      - "You are stomped and chomped. You drop things as you flee. Starting with the player on your right, each player may take one Treasure card from in front of you or (without looking) from your hand."
+    metadata:
+      - will_not_attack_level: 3
+  - card_type: 'door'
+    monster: "Net Troll"
+    level: 10
+    reward:
+      treasure_reward: 3
+      # level_reward: 1
+    description:
+      - "He has no special powers, and he's really mad about it."
+      - "Screws up the game balance by forcing you to let the player(s) of the highest Level take any one item (each) from you."
+  - card_type: 'door'
+    monster: "Platycore"
+    level: 6
+    reward:
+      treasure_reward: 2
+    description:
+      - "Resists magic. +6 against Wizards."
+      - "Either discard your whole hand or lose 2 Levels."
+  - card_type: 'door'
+    monster: "Gelatinous Octahedron"
+    level: 2
+    reward:
+      treasure_reward: 1
+    description:
+      - "+1 to Run Rway"
+      - "Drop all your Big items"
+  - card_type: 'door'
+    monster: "Pukachu"
+    level: 6
+    reward:
+      treasure_reward: 2
+    description:
+      - "Gain an extra Level if you defeat it without using help or bonuses"
+      - "Projectile vomitting attack! Discard your hole hand"
+  - card_type: 'door'
+    monster: "Flying Frogs"
+    level: 2
+    reward:
+      treasure_reward: 1
+    description:
+      - "-1 to Run Away."
+      - "They bite! Lose 2 Levels."
+  - card_type: 'door'
+    monster: "Leperchaun"
+    level: 4
+    reward:
+      treasure_reward: 2
+    description:
+      - "+5 against Elves. He's gross!"
+      - "He takes two items from you - one chosen by the player on either side of you."
+  - card_type: 'door'
+    monster: "Mr Bones"
+    level: 2
+    reward:
+      treasure_reward: 1
+    description:
+      - "Undead"
+      - "If you must flee, you lose a level even if you escape."
+      - "His bony touch costs you 2 Levels."
+  - card_type: 'door'
+    monster: "Potted Plant"
+    level: 1
+    reward:
+      treasure_reward: 1
+    description:
+      - "Elves draw an extra Treasure after defeating it."
+      - "None. Escape is automatic"
+  - card_type: 'door'
+    monster: "Undead Horse"
+    level: 4
+    reward:
+      treasure_reward: 2
+    description:
+      - "Undead"
+      - "+5 against Dwarves."
+      - "Kicks, bites, an smells awful. Lose 2 Levels."
+  - card_type: 'door'
+    monster: "Large Angry Chicken"
+    level: 2
+    reward:
+      treasure_reward: 1
+    description:
+      - "Fried chicken is delicious. Gain an extra level if you defeat it with fire or flame."
+      - "Very painful pecking. Lose a Level."
+  - card_type: 'door'
+    monster: "Tongue Demon"
+    level: 12
+    reward:
+      treasure_reward: 3
+    description:
+      - "A creature from Hell. +4 against Clerics. You must discard one item (your choice) before combat."
+      - "A really disgusting kiss costs you 2 Levels (3 for Elves)."
+  - card_type: 'door'
+    monster: "Maul Rat"
+    level: 1
+    reward:
+      treasure_reward: 1
+    description:
+      - "A creature from Hell. +3 against Clerics."
+      - "She wacks you. Lose a Level."
+  - card_type: 'door'
+    monster: "Unspeakably Awful Indescribable Horror"
+    level: 14
+    reward:
+      treasure_reward: 4
+    description:
+      - "Bonus: +4 against Warriors."
+      - "Unspeakably awful death for anyone but a Wizard. A Wizard merely loses his powers - discard the Wizard card."
+  - card_type: 'door'
+    monster: "Stoned Golem"
+    level: 14
+    reward:
+      treasure_reward: 4
+    description:
+      - "You may choose whether to fight the Stoned Golem or just wave, walk past and let him keep his Treasure. (Exception: Halflings look tasty and must fight)."
+      - "He has the munchies. He eats you. You're dead."
+  - card_type: 'door'
+    monster: "Ghoulfiends"
+    level: 8
+    reward:
+      treasure_reward: 2
+    description:
+      - "No items help against them - fight them with your level only."
+      - "Your Level becomes equal to the lowest Level of any character in play."
+  - card_type: 'door'
+    monster: "Wannabe Vampire"
+    level: 12
+    reward:
+      treasure_reward: 3
+    description:
+      - "Instead of fighting, a Cleric can chase the Wannabe Vampire away just by going 'booga booga', and take all his treasure. There is no level increase for this."
+      - "Blocks the door and tells you about his character. Lose 3 Levels."
+  - card_type: 'door'
+    monster: "Drooling Slime"
+    level: 1
+    reward:
+      treasure_reward: 1
+    description:
+      - "Yucky slime! +4 against Elves."
+      - "Discard the Footgear you are wearing. Lose a Level if you have no Footgear."
+  - card_type: 'door'
+    monster: "Floating Nose"
+    level: 10
+    reward:
+      treasure_reward: 3
+    description:
+      - "If you dont want to fight the Floating Nose, you can bribe it with an item worth at least 200 gold pieces, and it will let you go."
+      - "It can sniff you anywhere. If you lose, you cannot flee; nothing will help you. Lose 3 Levels."
+  - card_type: 'door'
+    monster: "Gazebo"
+    level: 8
+    reward:
+      treasure_reward: 2
+    description:
+      - "No one can help you. You must face the Gazebo alone."
+      - "Lose 3 Levels."
+  - card_type: 'door'
+    monster: "Face Sucker"
+    level: 8
+    reward:
+      treasure_reward: 2
+    description:
+      - "Its gross! +6 against Elves."
+      - "When it sucks your face off, your Headgear goes with it. Discard the Headgear you are wearing, and lose a Level."
+  - card_type: 'door'
+    monster: "Snails on Speed"
+    level: 4
+    reward:
+      treasure_reward: 2
+    description:
+      - "Bonus: -2 to Run Away."
+      - "They steal your Treasure. Roll a die and lose that many items or cards in your hand - your choice."
+  - card_type: 'door'
+    monster: "Crabs"
+    level: 1
+    reward:
+      treasure_reward: 1
+    description:
+      - "Cannot be outrun!"
+      - "Discard Armor and all items worn below the waist."
+  - card_type: 'door'
+    monster: "Plutonium Dragon"
+    level: 20
+    reward:
+      treasure_reward: 5
+      level_reward: 2
+    description:
+      - "Will not pursue anyone of Level 5 or below."
+      - "You are roasted and eaten. You are dead."
+  - card_type: 'door'
+    monster: "Squidzilla"
+    level: 18
+    reward:
+      treasure_reward: 4
+      level_reward: 2
+    description:
+      - "Elves are at -4. Will not pursue anyone of Level 4 or below except Elves."
+      - "You are grabbed, slimed, crushed, and gobbled. You are dead, dead, dead. Any questions?"
+  - card_type: 'door'
+    monster: "Bigfoot"
+    level: 12
+    reward:
+      treasure_reward: 3
+    description:
+      - "+3 against Dwarves and Halflings."
+      - "Stomps you flat and eats your hat. Lose the Headgear you were wearing."
+  - card_type: 'door'
+    monster: "Pit Bull"
+    level: 2
+    reward:
+      treasure_reward: 1
+    description:
+      - "If you can't defeat it, you may distract it (automatic escape) by dropping any wand, pole, or staff. (Fetch, Fido!)"
+      - "Fang marks in your butt. Lose 2 Levels."
+  - card_type: 'door'
+    monster: "Wight Brothers"
+    level: 16
+    reward:
+      treasure_reward: 4
+    description:
+      - "Undead"
+      - "Will not pursue anyone of Level 3 or below. Higher-Level characters lose 2 levels, even if they escape."
+      - "You are reduced to Level 1."
+  - card_type: 'door'
+    monster: "BullRog"
+    level: 18
+    reward:
+      treasure_reward: 5
+      level_reward: 2
+    description:
+      - "Will not pursue anyone of Level 4 or below."
+      - "You are flayed to death."
+  - card_type: 'door'
+    monster: "Lame Goblin"
+    level: 1
+    reward:
+      treasure_reward: 1
+    description:
+      - "+1 to Run Away."
+      - "He whacks you with his crutch. Lose a Level."
+  - card_type: 'door'
+    monster: "Harpies"
+    level: 4
+    reward:
+      treasure_reward: 2
+    description:
+      - "They resist magic. +5 againast Wizards."
+      - "Their music is really really bad. Lose 2 Levels."
+  - card_type: 'door'
+    monster: "King Tut"
+    level: 16
+    reward:
+      treasure_reward: 4
+      level_reward: 2
+    description:
+      - "Undead"
+      - "Will not pursue anyone of Level 3 or below. Higher-Level characters lose 2 levels, even if they escape."
+      - "Lose all your items and all cards in your hand."
+  - card_type: 'door'
+    monster: "3,872 Orcs"
+    level: 10
+    reward:
+      treasure_reward: 3
+    description:
+      - "+6 against Dwarves, due to ancient grudges."
+      - "Roll a die. On a 2 or less, they stomp you to death. Otherwise, lose as many levels as the die shows."
+  - card_type: 'door'
+    monster: "Insurance Salesman"
+    level: 14
+    reward:
+      treasure_reward: 4
+    description:
+      - "Your Level does not count. Fight him only with your bonuses!"
+      - "You buy insurance. Lose 1000 Gold Pieces' worth of items. If you dont have that much, lose all you have."
+  - card_type: 'door'
+    monster: "Amazon"
+    level: 8
+    reward:
+      treasure_reward: 2
+    description:
+      - "Will not attack females; just gives them 1 Treasure instead."
+      - "You have had your butt kicked by a woman. Your macho munchkin pride is lost. Lose your Class(es). If you already had no Class, lose 3 Levels."
+
+
+  #===========#
+  #   curse   #
+  #===========#
+  - card_type: 'door'
+    curse: "Curse"
+    description:
+      - "Lose the headgear you are wearing."
+    metadata:
+      - effect:
+        - attribute: "headgear"
+          equip_status: "equipped"
+          action: "discard"
+  - card_type: 'door'
+    curse: "Curse"
+    description:
+      - "Lose the footgear you are wearing."
+    metadata:
+      - effect:
+        - attribute: "footgear"
+          equip_status: "equipped"
+          action: "discard"
+  - card_type: 'door'
+    curse: "Curse"
+    description:
+      - "Lose the armor you are wearing."
+    metadata:
+      - effect:
+        - attribute: "armor"
+          equip_status: "equipped"
+          action: "discard"
+  - card_type: 'door'
+    curse: "Curse"
+    description:
+      - "Lose a Level"
+    metadata:
+      - effect:
+          - attribute: "level"
+            action: -1
+        quantity: 2
+  - card_type: 'door'
+    curse: "Curse"
+    description:
+      - "Lose a Small item."
+    metadata:
+      - effect:
+        - attribute: "small"
+          equip_status: "carried"
+          action: "discard"
+        quantity: 2
+  - card_type: 'door'
+    curse: "Curse"
+    description:
+      - "Lose a Big item."
+    metadata:
+      - effect:
+        - attribute: "big"
+          equip_status: "carried"
+          action: "discard"
+  - card_type: 'door'
+    curse: "Income Tax"
+    description:
+      - "Discard one item of your choice. Every other player must now discard an item, or items, totaling at least as much value as the item you discarded. If they don't have enough to pay the full tax, they must discard all their items and lose a level."
+  - card_type: 'door'
+    curse: "Truly Obnoxious Curse!"
+    description:
+      - "Lose the item that gives you the Biggest Bonus."
+  - card_type: 'door'
+    curse: "Lose Two Cards"
+    description:
+      - "First the player to the victim's left draws a card from the victim's hand and keeps it. Then the player on the right does the same."
+  - card_type: 'door'
+    curse: "Change Sex"
+    description:
+      - "-5 to your next combat due to distraction. After that, there is no further penalty. However, the change is permanent."
+  - card_type: 'door'
+    curse: "Malign Mirror"
+    description:
+      - "You are cursed! In your next fight (only), you may not get any bonuses from items other than Armor. A Wishing ring, used before the next fight, will lift the curse."
+  - card_type: 'door'
+    curse: "Chicken On Your Head"
+    description:
+      - "-1 to all your die rolls. Any Curse or Bad Stuff that removes your Headgear will take the chicken with it."
+  - card_type: 'door'
+    curse: "Duck of Doom"
+    description:
+      - "You should know better than to pick up a duck in a dungeon. Lose 2 Levels."
+  - card_type: 'door'
+    curse: "Lose Your Class"
+    description:
+      - "Discard your Class card, if you have one. If you have two Classes in play, lose one of them (your choice). If you have no Class, lose a Level."
+  - card_type: 'door'
+    curse: "Change Race"
+    description:
+      - "If you have no Race now, this curse has no effect. Otherwise, go back through the discard pile, starting with the top discard. The first Race card you come to replaces your current Race(s). If you go through the discards without finding a Race card, you just lose your own Race(s)."
+  - card_type: 'door'
+    curse: "Lose Your Race"
+    description:
+      - "Discard any Race(s) you have in play and become a Human"
+  - card_type: 'door'
+    curse: "Change Class"
+    description:
+      - "If you have no Class now, this curse has no effect. Otherwise, go back through the discard pile, starting with the top discard. The first Class card you come to replaces your current Class(es). If you go through the discards without finding a Class card, you just lose your own Class(es)."
+
+
+  #===========#
+  #   spell   #
+  #===========#
+  - card_type: 'door'
+    spell: "Ancient"
+    description:
+      - "+10 to Monster strength. Play during combat. If the monster is defeated, draw 2 extra Treasures."
+  - card_type: 'door'
+    spell: "Humongous"
+    description:
+      - "+10 to Monster strength. Play during combat. If the monster is defeated, draw 2 extra Treasures."
+  - card_type: 'door'
+    spell: "Enraged"
+    description:
+      - "+5 to Monster strength. Play during combat. If the monster is defeated, draw 1 extra Treasure."
+  - card_type: 'door'
+    spell: "Intelligent"
+    description:
+      - "+5 to Monster strength. Play during combat. If the monster is defeated, draw 1 extra Treasure."
+  - card_type: 'door'
+    spell: "Baby"
+    description:
+      - "-5 to Monster strength. Play during combat. If the monster is defeated, draw 1 fewer Treasure (minimum of 1)."
+  - card_type: 'door'
+    spell: "Divine Intervention"
+    description:
+      - "You must play this card as soon as you get it. All Clerics immediately go up a level. This can be the winning level. If this card makes you win, you are entitled to mock the other players mercilessly."
+
+
+  #===========#
+  #   class   #
+  #===========#
+  - card_type: 'door'
+    class: "Thief"
+    description:
+      - "Backstabbing: You may discard a card to backstab another player (-2 in combat). You may do this only once per victim per combat, but if two players are fighting a monster together, you may backstab each of them."
+      - "Theft: You may discard a card to try to steal a small item carried by another player. Roll a die; 4 or more succeeds. Otherwise, you get whacked and lose a level."
+    metadata:
+      - quantity: 3
+  - card_type: 'door'
+    class: "Wizard"
+    description:
+      - "Fight Spell: You may discard up to 3 cards after rolling the die to Run Away; each give you a +1 bonus to flee."
+      - "Charm Spell: You may discard your whole hand (minimum 3 cards) to charm a single Monster instead of fighting it. Discard the Monster and take its Treasure, but don't gain levels. If there are other monsters in the combat, fight them normally."
+    metadata:
+      - quantity: 3
+  - card_type: 'door'
+    class: "Warrior"
+    description:
+      - "You may discard up to 3 cards in combat; each one gives you a +1 bonus."
+      - "You win ties in combat."
+    metadata:
+      - quantity: 3
+  - card_type: 'door'
+    class: "Cleric"
+    description:
+      - "Resurrection: When it is time for you to draw cards face-up, you may instead take some or all from the top of the appropriate discard pile. You must then discard one card from your hand for each so drawn."
+      - "Turning: You may discard up to 3 cards in combat against an Undead monster. Each discard gives you a +3 bonus."
+    metadata:
+      - quantity: 3
+  - card_type: 'door'
+    class: "Super Munchkin"
+    description:
+      - "You may have two Class cards, and have all the advantages and disadvantages of each. Or you may have one Class card and have all of its advantages and none of its disadvantages (for example, monsters that hate Clerics will have no bonus against a Super Cleric)."
+      - "Lose this card if you lose all your Class cards."
+    metadata:
+      - quantity: 2
+
+
+  #==========#
+  #   race   #
+  #==========#
+  - card_type: 'door'
+    race: "Dwarf"
+    description:
+      - "You can carry any number of Big items."
+      - "You can have 6 cards in your hand."
+    metadata:
+      - quantity: 3
+  - card_type: 'door'
+    race: "Elf"
+    description:
+      - "+1 to Run Away"
+      - "You go up a level for every monster you help someone else kill."
+    metadata:
+      - quantity: 3
+  - card_type: 'door'
+    race: "Halfling"
+    description:
+      - "You may sell one item each turn for double price (other items are at normal price)."
+      - "If you fail your initial Run Away roll, you may discard a card and try once more."
+    metadata:
+      - quantity: 3
+  - card_type: 'door'
+    race: "Half-Breed"
+    description:
+      - "You may have two Race cards, and have all the advantages and disadvantages of each. Or you may have one Race card and have all of its advantages and none of its disadvantages (for example, monsters that hate Elves will have no bonus against a Half-Elf). Lose this card if you lose your Race card(s)."
+    metadata:
+      - quantity: 2
+
+
 treasure:
-    -
-        card_type: 'treasure'
-        equipment: "Singing & Dancing Sword"
-        str_bonus: 2
-        gold_value: 400
-        used_by:
-            thief: false
-    -
-        card_type: 'treasure'
-        equipment: "Bow with Ribbons"
-        type: '2h'
-        str_bonus: 4
-        gold_value: 800
-        used_by:
-            elf: true
-        metadata:
-            - gear_slot: ["hand", 2]
-    -
-        card_type: 'treasure'
-        equipment: "Cheese Grater of Peace"
-        type: '1h'
-        str_bonus: 3
-        gold_value: 400
-        used_by:
-            cleric: true
-        metadata:
-            - gear_slot: ["hand", 1]
-    -
-        card_type: 'treasure'
-        equipment: "Leather Armor"
-        type: 'armor'
-        str_bonus: 1
-        gold_value: 200
-        used_by:
-            female: true  # need to double check
-        metadata:
-            - gear_slot: ["armor", 1]
-    -
-        card_type: 'treasure'
-        spell: "Go Up A Level"
-        metadata:
-            - level_gain: 1
-            - quantity: 6
-    -
-        card_type: 'treasure'
-        spell: "Kill the Hireling"
-        description:
-            - "You can use this card only if a Hireling is in play (no matter who owns him). Discard the Hireling."
-        metadata:
-            - level_gain: 1
-    -
-        card_type: 'treasure'
-        spell: "Transferral Potion"
-        description:
-            - "Play during any combat. Any other player (your choice) fights the monster(s), may ask for help normally, and gets the Treasure and levels if he wins. The original player then resumes his turn, and may Loot The Room whether the combat was won or lost. Usable once only."
-        gold_value: 300
-    -
-        card_type: 'treasure'
-        spell: "Flask of Glue"
-        description:
-            - "Play when someone successfully escapes a combat for any reason. They must re-roll their escape (even if it was automatic the first time). Usable once only."
-        gold_value: 100
-    -
-        card_type: 'treasure'
-        spell: "Potion of Halitosis"
-        description:
-            - "Play during any combat. +2 to either side, or instantly kills the Floating Nose. Usable once only."
-        gold_value: 100
-    -
-        card_type: 'treasure'
-        spell: "Flaming Poison Potion"
-        description:
-            - "Play during any combat. + 3 to either side. Usable once only."
-        gold_value: 100
-    -
-        card_type: 'treasure'
-        spell: "Pretty Balloons"
-        description:
-            - "Play during any combat, for distraction. +5 to either side. Usable once only."
-    -
-        card_type: 'treasure'
-        spell: "Hoard!"
-        description:
-            - "Draw three more Treasure cards immediately. They are face-down if you drew this card face-down; otherwise, they are face-up."
+
+  #===============#
+  #   equipment   #
+  #===============#
+  - card_type: 'treasure'
+    equipment: "Singing & Dancing Sword"
+    str_bonus: 2
+    gold_value: 400
+    used_by:
+      thief: false
+  - card_type: 'treasure'
+    equipment: "Bow with Ribbons"
+    type: '2h'
+    str_bonus: 4
+    gold_value: 800
+    used_by:
+      elf: true
+    metadata:
+      - gear_slot: ["hand", 2]
+  - card_type: 'treasure'
+    equipment: "Cheese Grater of Peace"
+    type: '1h'
+    str_bonus: 3
+    gold_value: 400
+    used_by:
+      cleric: true
+    metadata:
+      - gear_slot: ["hand", 1]
+  - card_type: 'treasure'
+    equipment: "Leather Armor"
+    type: 'armor'
+    str_bonus: 1
+    gold_value: 200
+    used_by:
+      female: true  # need to double check
+    metadata:
+      - gear_slot: ["armor", 1]
+  - card_type: 'treasure'
+    equipment: "Hammer of Kneecapping"
+    type: '1h'
+    str_bonus: 4
+    gold_value: 600
+    used_by:
+      dwarf: true
+  - card_type: 'treasure'
+    equipment: "Rapier of Unfairness"
+    type: '1h'
+    str_bonus: 3
+    gold_value: 600
+    used_by:
+      elf: true
+  - card_type: 'treasure'
+    equipment: "Boots of Running Really Fast"
+    type: 'footgear'
+    gold_value: 400
+    description:
+      - 'Gives you +2 to Run Away.'
+  - card_type: 'treasure'
+    equipment: "Shield of Ubiquity"
+    type: '1h'
+    big: true
+    str_bonus: 4
+    gold_value: 600
+    used_by:
+      warrior: true
+  - card_type: 'treasure'
+    equipment: "Mithril Armor"
+    type: 'armor'
+    big: true
+    str_bonus: 3
+    gold_value: 600
+    used_by:
+      wizard: false
+  - card_type: 'treasure'
+    equipment: "Limburger and Anchovy Sandwich"
+    str_bonus: 3
+    gold_value: 400
+    used_by:
+      halfling: false
+  - card_type: 'treasure'
+    equipment: "Slimy Armor"
+    type: 'armor'
+    str_bonus: 1
+    gold_value: 200
+  - card_type: 'treasure'
+    equipment: "Bad-Ass Bandana"
+    type: 'headgear'
+    str_bonus: 3
+    gold_value: 400
+    used_by:
+      human: true
+  - card_type: 'treasure'
+    equipment: "Gentlemen's Club"
+    type: '1h'
+    str_bonus: 3
+    gold_value: 400
+    used_by:
+      male: true
+  - card_type: 'treasure'
+    equipment: "Pointy Hat of Power"
+    type: 'headgear'
+    str_bonus: 3
+    gold_value: 400
+    used_by:
+      wizard: true
+  - card_type: 'treasure'
+    equipment: "Eleven-Foot Pole"
+    type: '2h'
+    str_bonus: 1
+    gold_value: 200
+  - card_type: 'treasure'
+    equipment: "Boots of Butt-Kicking"
+    type: 'footgear'
+    str_bonus: 2
+    gold_value: 400
+  - card_type: 'treasure'
+    equipment: "Sneaky Bastard Sword"
+    type: '1h'
+    str_bonus: 2
+    gold_value: 400
+  - card_type: 'treasure'
+    equipment: "Huge Rock"
+    type: '2h'
+    big: true
+    str_bonus: 3
+  - card_type: 'treasure'
+    equipment: "Helm of Courage"
+    type: 'headgear'
+    str_bonus: 1
+    gold_value: 200
+  - card_type: 'treasure'
+    equipment: "Flaming Armor"
+    type: 'armor'
+    str_bonus: 2
+    gold_value: 400
+  - card_type: 'treasure'
+    equipment: "Pantyhose of Gaint Strength"
+    str_bonus: 3
+    gold_value: 600
+    used_by:
+      warrior: false
+  - card_type: 'treasure'
+    equipment: "Cloak of Obscurity"
+    str_bonus: 4
+    gold_value: 600
+    used_by:
+      thief: true
+  - card_type: 'treasure'
+    equipment: "Dagger of Treachery"
+    type: '1h'
+    str_bonus: 3
+    gold_value: 400
+    used_by:
+      thief: true
+  - card_type: 'treasure'
+    equipment: "Staff of Napalm"
+    type: '1h'
+    str_bonus: 5
+    gold_value: 800
+    used_by:
+      wizard: true
+  - card_type: 'treasure'
+    equipment: "Stepladder"
+    big: true
+    str_bonus: 3
+    gold_value: 400
+    used_by:
+      halfling: true
+  - card_type: 'treasure'
+    equipment: "Buckler of Swashing"
+    type: '1h'
+    str_bonus: 2
+    gold_value: 400
+  - card_type: 'treasure'
+    equipment: "Spiky Knees"
+    str_bonus: 1
+    gold_value: 200
+  - card_type: 'treasure'
+    equipment: "Sandals of Protection"
+    type: 'footgear'
+    gold_value: 700
+    description:
+      - 'Curse cards which you draw when kicking down a door have no effect. (Curses cast by other players will affect you).'
+  - card_type: 'treasure'
+    equipment: "Really Impressive Title"
+    str_bonus: 3
+  - card_type: 'treasure'
+    equipment: "Short Wide Armor"
+    type: 'armor'
+    str_bonus: 3
+    gold_value: 400
+    used_by:
+      dwarf: true
+  - card_type: 'treasure'
+    equipment: "Horny Helmet"
+    type: 'headgear'
+    str_bonus: 3
+    gold_value: 600
+    used_by:
+      elf: true
+  - card_type: 'treasure'
+    equipment: "Mace of Sharpness"
+    type: '1h'
+    str_bonus: 4
+    gold_value: 600
+    used_by:
+      cleric: true
+  - card_type: 'treasure'
+    equipment: "Rat on a Stick"
+    type: '1h'
+    str_bonus: 1
+  - card_type: 'treasure'
+    equipment: "Swiss Army Polearm"
+    type: '2h'
+    big: true
+    str_bonus: 4
+    gold_value: 600
+    used_by:
+      human: true
+  - card_type: 'treasure'
+    equipment: "Broad Sword"
+    type: '1h'
+    str_bonus: 3
+    gold_value: 400
+    used_by:
+      female: true
+  - card_type: 'treasure'
+    equipment: "Chainsaw of Bloody Dismemberment"
+    type: '2h'
+    big: true
+    str_bonus: 3
+    gold_value: 600
+  - card_type: 'treasure'
+    equipment: "Tuba of Charm"
+    type: '1h'
+    big: true
+    gold_value: 300
+    description:
+      - "This melodious instrument captivates your foes, giving you +3 to Run Away. If you successfully escape combat, snag a Treasure on your way out."
+  - card_type: 'treasure'
+    equipment: "Hireling"
+    str_bonus: 1
+    description:
+      - "Allows you to carry and use one extra Item, even if you could not otherwise. If you lose your Hireling, the Item goes, too. You may discard your Hireling for an automatic escape from any monster. Keep this card in front of you, with your Treasures."
+
+
+  #===========#
+  #   spell   #
+  #===========#
+  - card_type: 'treasure'
+    spell: "Go Up A Level"
+    metadata:
+      - level_gain: 1
+      - quantity: 6
+  - card_type: 'treasure'
+    spell: "Kill the Hireling"
+    description:
+      - "You can use this card only if a Hireling is in play (no matter who owns him). Discard the Hireling."
+    metadata:
+      - level_gain: 1
+  - card_type: 'treasure'
+    spell: "Transferral Potion"
+    description:
+      - "Play during any combat. Any other player (your choice) fights the monster(s), may ask for help normally, and gets the Treasure and levels if he wins. The original player then resumes his turn, and may Loot The Room whether the combat was won or lost. Usable once only."
+    gold_value: 300
+  - card_type: 'treasure'
+    spell: "Flask of Glue"
+    description:
+      - "Play when someone successfully escapes a combat for any reason. They must re-roll their escape (even if it was automatic the first time). Usable once only."
+    gold_value: 100
+  - card_type: 'treasure'
+    spell: "Potion of Halitosis"
+    description:
+      - "Play during any combat. +2 to either side, or instantly kills the Floating Nose. Usable once only."
+    gold_value: 100
+  - card_type: 'treasure'
+    spell: "Flaming Poison Potion"
+    description:
+      - "Play during any combat. + 3 to either side. Usable once only."
+    gold_value: 100
+  - card_type: 'treasure'
+    spell: "Pretty Balloons"
+    description:
+      - "Play during any combat, for distraction. +5 to either side. Usable once only."
+  - card_type: 'treasure'
+    spell: "Hoard!"
+    description:
+      - "Draw three more Treasure cards immediately. They are face-down if you drew this card face-down; otherwise, they are face-up."
 ...
