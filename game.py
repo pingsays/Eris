@@ -25,7 +25,7 @@ class Game():
         for i in self.cards['treasure']:
             self.treasure.append(i)
 
-        # return shuffled decks
+        # shuffled deck
         random.shuffle(self.door)
         random.shuffle(self.treasure)
         # print(f'door: {len(self.door)}')
@@ -50,7 +50,7 @@ class Game():
         print("-" * header_len)
         print(f"Level: {player.level}")
         print()
-        # player.display_hand()
+        player.display_hand()
         print()
 
     
@@ -107,9 +107,10 @@ class Player():
         self.hand.append(cards)
 
     def check_hand(self):
-        for card in self.hand:
-            for key, value in card.items():
-                print(key, value)
+        for cards_dict in self.hand:
+            for card in cards_dict:
+                print(card)
+            print()
 
     def display_hand(self):
         header_row = f"-- {self.name}'s hand --"
@@ -118,9 +119,10 @@ class Player():
         print("-" * header_len)
         print(header_row)
         print("-" * header_len)
-        for card in self.hand:
-            for i in card:
-                print(i)
+
+        for cards_dict in self.hand:
+            for card in cards_dict:
+                print(card)
             print()
 
 
