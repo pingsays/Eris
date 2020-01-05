@@ -129,17 +129,24 @@ class Player():
 
 
 if __name__ == "__main__":
-    munchkin = Game(game_level=10) # sets up deck 
+    # sets up deck 
+    munchkin = Game(game_level=10) 
 
-    player_names = ['ping', 'james', 'abdul'] # this list could be generated however we like
-    
-    munchkin.setup_players(player_names) # sets up players and draws initial cards from the deck
+    # this list could be generated however we like
+    player_names = ['ping', 'james', 'abdul'] 
 
+    # sets up players and draws initial cards from the deck
+    munchkin.setup_players(player_names) 
+
+    # cool BI module that allows for cycling through each player turn
     import itertools as it
-    player = it.cycle([*munchkin.players.values()]) # cool BI module that allows for cycling through each player turn
+    player = it.cycle([*munchkin.players.values()]) 
 
-    while munchkin.check_game_over(): # this checks if any body has won before calling on next player
-        current_player = next(player) # next() is part of the iter module to call on next items in an iterable
+    # this checks if any body has won before calling on next player
+    while munchkin.check_game_over():
+        
+        # next() is part of the iter module to call on next items in an iterable
+        current_player = next(player) 
         munchkin.play(current_player)
 
     print(f"Game Over: {current_player.name} has won the game!")
