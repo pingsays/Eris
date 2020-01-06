@@ -7,10 +7,12 @@ cards = 'cards3.yaml'
 
 
 class Game():
-    def __init__(self):
+    def __init__(self, game_level: int):
         self.door = []
         self.treasure = []
-
+        self.players = {}
+        self.game_level = game_level
+    
         # load in the cards from yaml file
         with open(cards, 'r') as c:
             self.cards = yaml.load(c)
@@ -23,76 +25,124 @@ class Game():
         for i in self.cards['treasure']:
             self.treasure.append(i)
 
-        # shuffle the decks
+        # shuffled deck
         random.shuffle(self.door)
         random.shuffle(self.treasure)
+        # print(f'door: {len(self.door)}')
+        # print(f'treasure: {len(self.treasure)}')
+    
+    def get_deck(self):
+        return len(self.door), len(self.treasure)
+
+    def play(self, player):
+        self.game_status(player)
+        player_level = eval(input("Enter level gained or lost: "))
+        player.level += player_level
+
+
+
+    def game_status(self, player):
+        print(f"Game Level: {self.game_level}")
+        header_row = f"-- {player.name}'s turn --"
+        header_len = len(header_row)
+        print("-" * header_len)
+        print(header_row)
+        print("-" * header_len)
+        print(f"Level: {player.level}")
+        print()
+        player.display_hand()
+        print()
+
+    
+    def setup_players(self, players_list: list):
+        for player in players_list:
+            self.players[player] = Player(player)
+
+        print(self.players)
+
+        # print(munchkin.door.pop(0))
+        for i in range(4):
+            # print(munchkin.door[i])
+            for player in self.players.values():
+                player.draw_card(self.door)
+                player.draw_card(self.treasure)
+                
+        for player in self.players.values():
+            pass
+            # player.display_hand()
 
     def roll_dice(self):
         dice_roll = random.randint(1, 6)
         print(f'Dice Roll: {dice_roll}')
         return dice_roll
 
+    def check_game_over(self):
+        max_player_level = max([player.level for player in self.players.values()])
+        print(max_player_level)
+        if max_player_level != self.game_level:
+            return True #if the player with the highest level is not equal to base game level continue
+        else:
+            return False
+
 
 class Player():
-    def __init__(self):
+    def __init__(self, name: str):
         self.hand = []
         self.field = []
+        self.name = name
+        self.level = 0
 
-    def draw_card(self, action, deck):
-        reveal_card = deck.pop(0)  # need to rename variable to something that makes more sense
-        card = []
+    def draw_card(self, game_deck: list):
+        drawn_card = game_deck.pop(0)  # need to rename variable to something that makes more sense
+        cards = []
 
-        for key, value in reveal_card.items():
+        for key, value in drawn_card.items():
             if key == 'description':
                 for i in value:
-                    card.append(f"{i}")
+                    cards.append(f"{i}")
             elif key == 'metadata':
                 continue
             else:
-                card.append(f"{key}: {value}")
-        self.hand.append(card)
+                cards.append(f"{key}: {value}")
+        self.hand.append(cards)
 
     def check_hand(self):
-        for card in self.hand:
-            for key, value in card.items():
-                print(key, value)
+        for cards_dict in self.hand:
+            for card in cards_dict:
+                print(card)
+            print()
+
+    def display_hand(self):
+        header_row = f"-- {self.name}'s hand --"
+        header_len = len(header_row)
+        
+        print("-" * header_len)
+        print(header_row)
+        print("-" * header_len)
+
+        for cards_dict in self.hand:
+            for card in cards_dict:
+                print(card)
+            print()
 
 
-munchkin = Game()
-player_names = ['ping', 'james', 'abdul']
-players = {}
-
-for player_name in player_names:
-    players[player_name] = Player()
-
-# print(munchkin.door.pop(0))
-for i in range(4):
-    # print(munchkin.door[i])
-    for player in players.values():
-        player.draw_card('game_setup', munchkin.door)
-
-for i in range(4):
-    # print(munchkin.treasure[i])
-    for player in players.values():
-        player.draw_card('game_setup', munchkin.treasure)
 
 
-for player in player_names:
-    header_row = f"-- {player}'s hand --"
-    header_len = len(header_row)
+if __name__ == "__main__":
+    munchkin = Game(game_level=10) # sets up deck 
 
-    print("-" * header_len)
-    print(header_row)
-    print("-" * header_len)
+    player_names = ['ping', 'james', 'abdul'] # this list could be generated however we like
+    
+    munchkin.setup_players(player_names) # sets up players and draws initial cards from the deck
 
-    for card in players[player].hand:
-        for i in card:
-            print(i)
-        print()
+    import itertools as it
+    player = it.cycle([*munchkin.players.values()]) # cool BI module that allows for cycling through each player turn
 
+    while munchkin.check_game_over(): # this checks if any body has won before calling on next player
+        current_player = next(player) # next() is part of the iter module to call on next items in an iterable
+        munchkin.play(current_player)
 
-# print("Abdul's hand")
-# for card in players['abdul'].hand:
-#     for i in card:
-#         print(i)
-#     print()
+    print(f"Game Over: {current_player.name} has won the game!")
+
+    
+
