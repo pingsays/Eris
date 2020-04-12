@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "857d60c33968fe8363e9ca6868c0660d2990e433460fc1666f177703b3ae84cd"
+            "sha256": "bd721d0c7b82c7fc9c788685b3f0f7b592a889ce982b6380b36e5832becdc544"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -137,13 +137,6 @@
             ],
             "version": "==0.6.1"
         },
-        "pathspec": {
-            "hashes": [
-                "sha256:7d91249d21749788d07a2d0f94147accd8f845507400749ea19c1ec9054a12b0",
-                "sha256:da45173eb3a6f2a5a487efba21f050af2b41948be6ab52b6a1e3ff22bb8b7061"
-            ],
-            "version": "==0.8.0"
-        },
         "pylint": {
             "hashes": [
                 "sha256:3db5468ad013380e987410a8d6956226963aed94ecb5f9d3a28acca6d9ac36cd",
@@ -151,6 +144,14 @@
             ],
             "index": "pypi",
             "version": "==2.4.4"
+        },
+        "python-dotenv": {
+            "hashes": [
+                "sha256:81822227f771e0cab235a2939f0f265954ac4763cafd806d845801c863bf372f",
+                "sha256:92b3123fb2d58a284f76cc92bfe4ee6c502c32ded73e8b051c4f6afc8b6751ed"
+            ],
+            "index": "pypi",
+            "version": "==0.12.0"
         },
         "python-engineio": {
             "hashes": [
@@ -202,14 +203,6 @@
                 "sha256:565a021fd19419476b9362b05eeaa094178de64f8361e44468f9e9d7843901e1"
             ],
             "version": "==1.11.2"
-        },
-        "yamllint": {
-            "hashes": [
-                "sha256:09d554bafc57beb22b01619c94e1ba0e8fbb016fa9c1b35ddc68d7bfc16d177f",
-                "sha256:7e1e698b3d344b64bc46cbe8c4df7dfdfe7c00ed1a8d1c851ecd5b552d93d193"
-            ],
-            "index": "pypi",
-            "version": "==1.21.0"
         }
     },
     "develop": {}
