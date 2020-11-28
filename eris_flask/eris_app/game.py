@@ -2,9 +2,10 @@ from pprint import pprint
 import yaml
 import random
 import sys
-from player import Player
+from flask_socketio import SocketIO, emit, send
+from eris_app.player import Player
 
-cards = 'cards3.yaml'
+cards = 'eris_app/cards3.yaml'
 
 
 class Game():
@@ -36,23 +37,42 @@ class Game():
         return len(self.door), len(self.treasure)
 
     def play(self, player):
-        self.game_status(player)
-        player_level = eval(input("Enter level gained or lost: "))
-        player.level += player_level
+        game_play = {
+            'game_message': 'Enter new level: ',
+            'game_status': self.game_status(player),
+            # 'player_level_update': self.player_level_update(player, level)
+        }
+        return game_play
+        
 
+    def player_level_update(self, player, level):
+        new_player_level = player.level + level
+        new_player_level = {
+            'player_level': player.level,
+            'new_player_level': new_player_level
+        }
+        return new_player_level
 
 
     def game_status(self, player):
-        print(f"Game Level: {self.game_level}")
-        header_row = f"-- {player.name}'s turn --"
-        header_len = len(header_row)
-        print("-" * header_len)
-        print(header_row)
-        print("-" * header_len)
-        print(f"Level: {player.level}")
-        print()
-        player.display_hand()
-        print()
+        # print(f"Game Level: {self.game_level}")
+        # header_row = f"-- {player.name}'s turn --"
+        # header_len = len(header_row)
+        # print("-" * header_len)
+        # print(header_row)
+        # print("-" * header_len)
+        # print(f"Level: {player.level}")
+        # print()
+        # player.display_hand()
+        # print()
+        game_info = {
+            'game_level': self.game_level,
+            'player_turn': player.name,
+            'player_level': player.level,
+            'player_hand': player.hand
+        }
+        print(game_info)
+        return game_info
 
     
     def setup_players(self, players_list: list):

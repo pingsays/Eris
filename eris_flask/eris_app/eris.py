@@ -1,4 +1,4 @@
-from game import Game
+from eris_app.game import Game
 
 if __name__ == "__main__":
     munchkin = Game(game_level=10) # sets up deck 

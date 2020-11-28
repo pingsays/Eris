@@ -25,15 +25,16 @@ class Player():
                 print(card)
             print()
 
-    def display_hand(self):
+    def hand(self):
         header_row = f"-- {self.name}'s hand --"
         header_len = len(header_row)
         
         print("-" * header_len)
         print(header_row)
         print("-" * header_len)
-
+        player_hand = {}
         for cards_dict in self.hand:
             for card in cards_dict:
                 print(card)
-            print()
+                player_hand.update(card)
+        print(player_hand)
