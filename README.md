@@ -1,1 +1,1 @@
-# Eris
+# Project Eris
